@@ -27,10 +27,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-         
+
+      - name: Repair generated App source for deployment
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('src/App.tsx')
+          s = p.read_text()
+          s = s.replace("  certificateUrl: string;\n}\n}\n\nconst COURSES", "  certificateUrl: string;\n}\n\nconst COURSES", 1)
+          marker = "    code: 'GAI-2026-07-MCTZ',\n    \n    rotation: '-rotate-1',"
+          replacement = "    code: 'GAI-2026-07-MCTZ',\n    certificateUrl: '/certificados/07-ai-app-building.pdf',\n    rotation: '-rotate-1',"
+          s = s.replace(marker, replacement, 1)
+          p.write_text(s)
+          PY
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install
 
       - name: Build
         run: npm run build

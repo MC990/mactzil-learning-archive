@@ -38,6 +38,7 @@ jobs:
           marker = "    code: 'GAI-2026-07-MCTZ',\n    \n    rotation: '-rotate-1',"
           replacement = "    code: 'GAI-2026-07-MCTZ',\n    certificateUrl: '/certificados/07-ai-app-building.pdf',\n    rotation: '-rotate-1',"
           s = s.replace(marker, replacement, 1)
+          s = s.replace("certificateUrl: '/certificados/", "certificateUrl: '/mactzil-learning-archive/certificados/")
           p.write_text(s)
           PY
 

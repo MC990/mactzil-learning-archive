@@ -31,6 +31,8 @@ interface CourseItem {
   summary: string;
   code: string;
   rotation: string;
+  certificateUrl: string;
+}
 }
 
 const COURSES: CourseItem[] = [
@@ -42,6 +44,7 @@ const COURSES: CourseItem[] = [
     keyword: 'IA',
     summary: 'Principios de modelos, arquitectura de prompts y aplicaciones multimodales para diseño y estrategia.',
     code: 'GAI-2026-01-MCTZ',
+    certificateUrl: '/certificados/01-ai-fundamentals.pdf',
     rotation: '-rotate-2',
   },
   {
@@ -52,6 +55,7 @@ const COURSES: CourseItem[] = [
     keyword: 'PLANIFICACIÓN',
     summary: 'Ideación divergente, estructuración creativa de campañas y diseño de mapas estratégicos.',
     code: 'GAI-2026-02-MCTZ',
+    certificateUrl: '/certificados/02-ai-brainstorming-planning.pdf',
     rotation: 'rotate-1.5',
   },
   {
@@ -62,6 +66,7 @@ const COURSES: CourseItem[] = [
     keyword: 'INVESTIGACIÓN',
     summary: 'Síntesis cualitativa de audiencias, análisis de patrones de mercado y diferenciación de marca.',
     code: 'GAI-2026-03-MCTZ',
+    certificateUrl: '/certificados/03-ai-research-insights.pdf',
     rotation: '-rotate-1',
   },
   {
@@ -72,6 +77,7 @@ const COURSES: CourseItem[] = [
     keyword: 'COMUNICACIÓN',
     summary: 'Calibración de tono de voz, redacción editorial estratégica y síntesis comunicacional ejecutiva.',
     code: 'GAI-2026-04-MCTZ',
+    certificateUrl: '/certificados/04-ai-writing-communicating.pdf',
     rotation: 'rotate-2',
   },
   {
@@ -82,6 +88,7 @@ const COURSES: CourseItem[] = [
     keyword: 'DATOS',
     summary: 'Telemetría de rendimiento creativo, interpretación analítica de métricas y visualización de datos.',
     code: 'GAI-2026-05-MCTZ',
+    certificateUrl: '/certificados/05-ai-data-analysis.pdf',
     rotation: '-rotate-2.5',
   },
   {
@@ -92,6 +99,7 @@ const COURSES: CourseItem[] = [
     keyword: 'CONTENIDO',
     summary: 'Dirección de arte generativa, escalabilidad de activos visuales y consistencia estilística multicanal.',
     code: 'GAI-2026-06-MCTZ',
+    certificateUrl: '/certificados/06-ai-content-creation.pdf',
     rotation: 'rotate-1.5',
   },
   {
@@ -102,6 +110,7 @@ const COURSES: CourseItem[] = [
     keyword: 'APPS',
     summary: 'Prototipado rápido de microherramientas, interfaces interactivas y pipelines automatizados.',
     code: 'GAI-2026-07-MCTZ',
+    
     rotation: '-rotate-1',
   },
 ];
@@ -688,7 +697,7 @@ export default function App() {
                                   type="button"
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    handleOpenCertificate(course);
+                                    window.open(course.certificateUrl, '_blank', 'noopener,noreferrer');
                                   }}
                                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#111111] text-[#FAF7F2] hover:bg-[#E24B6A] transition-colors rounded-lg text-xs font-mono font-bold uppercase tracking-wider shadow-sm cursor-pointer"
                                 >
@@ -698,7 +707,7 @@ export default function App() {
                                   type="button"
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    handleOpenCertificate(course);
+                                    window.open(course.certificateUrl, '_blank', 'noopener,noreferrer');
                                   }}
                                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-transparent text-[#111111] border border-[#111111] hover:bg-[#F4DFD8] transition-colors rounded-lg text-xs font-mono font-bold uppercase tracking-wider cursor-pointer"
                                 >

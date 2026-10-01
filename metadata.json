@@ -1,0 +1,6 @@
+{
+  "name": "Learning Archive",
+  "description": "An editorial learning archive and credential showcase for a graphic designer and marketer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
